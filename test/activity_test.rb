@@ -53,7 +53,8 @@ class ActivityTest < Minitest::Test
     ac = Activity.new("Bowling")
     ac.add_participant("Jim", 20)
     ac.add_participant("Joe", 40)
-    assert_equal {"Jim" => 10, "Joe" => -10}, ac.owed
+    hash = {"Jim" => 10, "Joe" => -10}
+    assert_equal hash, ac.owed
   end
 
 

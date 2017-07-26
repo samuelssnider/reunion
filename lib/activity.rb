@@ -20,9 +20,12 @@ class Activity
   end
 
   def owed
-    spent = @participants.values
-    owed = spent.map {|spend| spend - split}
-    owed_hash = 
+    spent = @participants.to_a
+    spent.map do |spend|
+      spend[1] = split - spend[1] 
+    end
+    spent.to_h
+  end
 
 
 end
